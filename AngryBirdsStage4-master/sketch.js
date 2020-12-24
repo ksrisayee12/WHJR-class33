@@ -28,7 +28,7 @@ function preload() {
     bgm = loadSound("sprites/Angry Birds Theme.mp3");
     reattach = loadSound("sprites/angry_birds.mp3");
     pigLaugh = loadSound("sprites/angry_birds_pig.mp3")
-  //  getTime();
+    getTime();
 }
 
 function setup(){
@@ -128,36 +128,36 @@ function keyPressed(){
     }
 }
 
-//async function getTime(){
-//    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
-//    var responseJSON = await response.json();
-//
-//    var  dateTime = responseJSON.datetime;
-//   // console.log(dateTime);
-//   
-//    hour = dateTime.slice(11,13);
-//  //  console.log(hour);
-//
-//    minute = dateTime.slice(14,16);
-//  // console.log(minute);
-//
-//    if (hour>=6 && hour<17){
-//        bg = "sprites/bg.png"
-//    }
-//    else if (hour == 18 && minute <= 02){
-//        Visiblity -= 5;
-//        tint(255, Visiblity)
-//        image(backgroundImg, 1200, 400);   
-//      //  console.log(Visiblity);
-//        getTime();    
-//    }
-//    else{
-//        bg = "sprites/bg2.png"
-//    }
-//
-//  
-//    backgroundImg = loadImage(bg);
-//
-//   
-//  
-//}
+async function getTime(){
+    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
+    var responseJSON = await response.json();
+
+    var  dateTime = responseJSON.datetime;
+   // console.log(dateTime);
+   
+    hour = dateTime.slice(11,13);
+  //  console.log(hour);
+
+    minute = dateTime.slice(14,16);
+  // console.log(minute);
+
+    if (hour>=6 && hour<17){
+        bg = "sprites/bg.png"
+    }
+    else if (hour == 18 && minute <= 02){
+        Visiblity -= 5;
+        tint(255, Visiblity)
+        image(backgroundImg, 1200, 400);   
+      //  console.log(Visiblity);
+        getTime();    
+    }
+    else{
+        bg = "sprites/bg2.png"
+    }
+
+  
+    backgroundImg = loadImage(bg);
+
+   
+  
+}
